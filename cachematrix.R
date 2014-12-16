@@ -13,17 +13,17 @@
 ##  its inverse by using scoping rules
 makeCacheMatrix <- function(x = matrix()) {
 
-	# Initialize the stored inverse value to NULL
-	i <- NULL
+    # Initialize the stored inverse value to NULL
+    i <- NULL
 
-	# Set the matrix values
+    # Set the matrix values
     set <- function(y) {
         x <<- y
         # If the matrix changes the inverse must be set to NULL
         i <<- NULL
     }
 
-   	# Get matrix values
+    # Get matrix values
     get <- function() x
 
     # Set the matrix inverse 
@@ -44,10 +44,10 @@ makeCacheMatrix <- function(x = matrix()) {
 ## the inverse from the cache.
 cacheSolve <- function(x, ...) {
 
-	# Grab the matrix inverse
-	i <- x$getinverse()
+    # Grab the matrix inverse
+    i <- x$getinverse()
 
-	# If the inverse is cached then return it
+    # If the inverse is cached then return it
     if(!is.null(i)) {
         message("getting cached data")
         return(i)
